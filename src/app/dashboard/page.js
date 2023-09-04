@@ -1,8 +1,8 @@
-export default function Home() {
+export default function Dashboard() {
   return (
     <main>
       <div>
-        <h1>I am from home</h1>
+        <h1>Dashboard</h1>
       </div>
     </main>
   );
