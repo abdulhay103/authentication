@@ -14,7 +14,7 @@ const Header = () => {
       <div className="container mx-auto">
         <nav className=" flex justify-between">
           <div className=" w-16">
-            <Link href="/">Home</Link>
+            <Link href="/" replace>Home</Link>
           </div>
           <div className=" lg:hidden">
             <button onClick={clickHandler}>
@@ -22,7 +22,7 @@ const Header = () => {
             </button>
           </div>
           <div className=" hidden lg:flex gap-6">
-            <Link href="/login">Login</Link>
+            <Link href="/login" replace>Login</Link>
             <Link href="/dashboard">Dashboard</Link>
           </div>
         </nav>
@@ -31,8 +31,8 @@ const Header = () => {
             isToggle ? "flex flex-col lg:hidden gap-4 container pt-3" : "hidden"
           }
         >
-          <Link href="/login">Login</Link>
-          <Link href="/dashboard">Dashboard</Link>
+          <Link href="/login" replace>Login</Link>
+          <Link href="/dashboard" replace>Dashboard</Link>
         </div>
       </div>
     </header>
