@@ -8,17 +8,16 @@ export default function page() {
     email: "",
     password: "",
   });
-  console.log(inputValue.email);
+  console.log(inputValue);
   const handleChange = (name, value) => {
     setInputValue({ ...inputValue, [name]: value });
   };
   const submitHandler = async () => {
     const config = { method: "POST", body: JSON.stringify(inputValue) };
     const response = await fetch("/api/login", config);
-    console.log(response);
     const json = await response.json();
 
-    if (json["status" === true]) {
+    if (json["status"] === true) {
       router.replace("/dashboard");
     } else {
       alert(json["msg"]);

@@ -5,9 +5,12 @@ import { useRouter } from "next/navigation";
 
 export default function page() {
   const router = useRouter();
+
   const Logout = async () => {
-    const response = await fetch("/api/login");
+    const config = { method: "GET" };
+    const response = await fetch("/api/login", config);
     const json = await response.json();
+    console.log(json);
     if (json["status"] === true) {
       router.replace("/");
     }

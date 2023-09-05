@@ -8,7 +8,7 @@ export async function POST(req, res) {
 
   if (email === "email@email.com" && password === "123") {
     let tokenCookie = await TokenCookie(email);
-    return NextResponse.next(
+    return NextResponse.json(
       {
         status: true,
         msg: "Login Success",
@@ -16,11 +16,14 @@ export async function POST(req, res) {
       { status: 200, headers: tokenCookie }
     );
   } else {
-    return NextResponse.next({ status: false, msg: "Login Fail" });
+    return NextResponse.json(
+      { status: false, msg: "Login Fail" },
+      { status: 401 }
+    );
   }
 }
 
 export async function GET(req, res) {
-  cookies.delete("token");
-  return NextResponse.next({ status: true, msg: "Logout Seccess" });
+  req.cookies.delete("token");
+  return NextResponse.json({ status: true, msg: "Logout Seccess" });
 }
