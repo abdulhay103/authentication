@@ -23,6 +23,7 @@ const Header = () => {
           </div>
           <div className=" hidden lg:flex gap-6">
             <Link href="/login" replace>Login</Link>
+            <Link href="/signup" replace>Signup</Link>
             <Link href="/dashboard">Dashboard</Link>
           </div>
         </nav>
@@ -32,6 +33,7 @@ const Header = () => {
           }
         >
           <Link href="/login" replace>Login</Link>
+          <Link href="/signup" replace>Signup</Link>
           <Link href="/dashboard" replace>Dashboard</Link>
         </div>
       </div>
