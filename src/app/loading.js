@@ -1,3 +1,7 @@
 export default function MainLoading() {
-  return <div>loading...</div>;
+  return (
+    <div>
+      <h1 className="text-center mt-20">loading...</h1>
+    </div>
+  );
 }

@@ -1,7 +1,5 @@
+import Header from "./components/Header";
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Assignment-14",
@@ -11,7 +9,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="bg-gradient-to-tl from-teal-50 via-slate-50 to-indigo-50 min-h-screen">
+        <Header />
         <div>{children}</div>
       </body>
     </html>

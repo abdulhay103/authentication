@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
+export default function page() {
   return (
     <main>
       <div className=" w-1/3 border mx-auto mt-36 p-5">
