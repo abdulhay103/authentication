@@ -16,7 +16,7 @@ export default function page() {
   //Submit Handler
   const submitHandler = async () => {
     const config = { method: "POST", body: JSON.stringify(inputValue) };
-    const response = await fetch("/api/login", config);
+    const response = await fetch("/api/signup/otp", config);
     const json = await response.json();
 
     if (json["status"] === true) {

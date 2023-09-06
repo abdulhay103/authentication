@@ -3,18 +3,18 @@ import { NextResponse } from "next/server";
 export async function POST(req, res) {
   const JSON = await req.json();
   let email = JSON["email"];
+  console.log(email);
 
   if (email) {
     return NextResponse.json(
       {
         status: true,
         msg: "Signup Success",
+        email: email,
       },
       {
         status: 201,
-        headers: {
-          email: email,
-        },
+        headers: {},
       }
     );
   } else {

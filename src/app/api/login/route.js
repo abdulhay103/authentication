@@ -5,6 +5,7 @@ export async function POST(req, res) {
   const JSON = await req.json();
   let email = JSON["email"];
   let password = JSON["password"];
+  console.log(email);
 
   if (email === "email@email.com" && password === "123") {
     let tokenCookie = await TokenCookie(email);
