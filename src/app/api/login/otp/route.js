@@ -5,7 +5,7 @@ import { headers } from "../../../../../next.config";
 export async function POST(req, res) {
   const JSON = await req.json();
   let otp = JSON["otp"];
-  let email = JSON["email"];
+  // let email = JSON["email"];
 
   //
   // const resHeaders = headers();
@@ -14,13 +14,13 @@ export async function POST(req, res) {
   console.log(otp);
 
   if (otp === "123") {
-    // let tokenCookie = await TokenCookie(otp);
+    let tokenCookie = await TokenCookie(otp);
     return NextResponse.json(
       {
         status: true,
         msg: "Login Success",
       },
-      // { status: 200, headers: tokenCookie }
+      { status: 200, headers: tokenCookie },
       { status: 200 }
     );
   } else {

@@ -5,10 +5,9 @@ import { useState } from "react";
 export default function page() {
   const router = useRouter();
   const [inputValue, setInputValue] = useState({
-    email: "email@email.com",
-    password: "123",
+    email: "",
+    password: "",
   });
-  console.log(inputValue);
   const handleChange = (name, value) => {
     setInputValue({ ...inputValue, [name]: value });
   };
@@ -18,7 +17,7 @@ export default function page() {
     const json = await response.json();
 
     if (json["status"] === true) {
-      router.replace("/dashboard");
+      router.replace("/login/otp");
     } else {
       alert(json["msg"]);
     }
@@ -27,7 +26,7 @@ export default function page() {
   return (
     <main className="w-full">
       <div className=" w-1/3 border rounded mx-auto mt-14 py-3">
-        <h1 className=" text-center py-4 text-sky-500">Admin Login</h1>
+        <h1 className=" text-center py-4 text-sky-500">Login With Email</h1>
         <div className="px-5 mb-8">
           <input
             onChange={(e) => {

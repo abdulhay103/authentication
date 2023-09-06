@@ -1,6 +1,4 @@
 "use client";
-// import Link from "next/link";
-
 import { useRouter } from "next/navigation";
 
 export default function page() {
@@ -12,6 +10,7 @@ export default function page() {
     const json = await response.json();
     console.log(json);
     if (json["status"] === true) {
+      alert(json["msg"]);
       router.replace("/");
     }
   };
