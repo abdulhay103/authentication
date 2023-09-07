@@ -1,10 +1,11 @@
+import { SendMailReq } from "@/app/utils/sendMailReq";
 import { NextResponse } from "next/server";
 
 export async function POST(req, res) {
   const JSON = await req.json();
   let email = JSON["email"];
   console.log(email);
-
+  SendMailReq(email);
   if (email) {
     return NextResponse.json(
       {
