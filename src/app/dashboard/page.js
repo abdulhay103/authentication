@@ -1,19 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
+import { Cookies } from "universal-cookie";
 
 export default function page() {
   const router = useRouter();
+  const cookies = new Cookies();
 
   const Logout = async () => {
-    const config = { method: "GET" };
-    const response = await fetch("/api/login", config);
-    const json = await response.json();
-    console.log(json);
-    if (json["status"] === true) {
-      alert(json["msg"]);
-      router.replace("/");
-    }
+    cookies.remove("token");
+    // router.replace("/");
   };
+
   return (
     <main>
       <div className=" w-1/3 border mx-auto mt-36 p-5">
