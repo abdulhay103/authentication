@@ -27,11 +27,3 @@ export async function POST(req, res) {
     );
   }
 }
-
-// export async function GET(req, res) {
-//   req.cookies.delete("token");
-//   return NextResponse.json({
-//     status: true,
-//     msg: "Logout Success",
-//   });
-// }
