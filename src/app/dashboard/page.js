@@ -1,14 +1,21 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { Cookies } from "universal-cookie";
 
 export default function page() {
   const router = useRouter();
-  const cookies = new Cookies();
 
   const Logout = async () => {
-    cookies.remove("token");
-    // router.replace("/");
+    const config = { method: "GET" };
+    const res = await fetch("/api/logout", config);
+    try {
+      let json = await res.json();
+      if (json["status"] === true) {
+        alert(json["msg"]);
+        router.replace("/");
+      }
+    } catch (err) {
+      alert(err.toString());
+    }
   };
 
   return (
