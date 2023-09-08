@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 export async function POST(req, res) {
   const JSON = await req.json();
   let email = JSON["email"];
-  console.log(email);
   SendMailReq(email);
   if (email) {
     return NextResponse.json(
@@ -27,12 +26,4 @@ export async function POST(req, res) {
       { status: 203 }
     );
   }
-}
-
-export async function GET(req, res) {
-  req.cookies.delete("token");
-  return NextResponse.json({
-    status: true,
-    msg: "Logout Success",
-  });
 }

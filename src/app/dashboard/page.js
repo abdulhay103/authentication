@@ -6,14 +6,18 @@ export default function page() {
 
   const Logout = async () => {
     const config = { method: "GET" };
-    const response = await fetch("/api/login", config);
-    const json = await response.json();
-    console.log(json);
-    if (json["status"] === true) {
-      alert(json["msg"]);
-      router.replace("/");
+    const res = await fetch("/api/logout", config);
+    try {
+      let json = await res.json();
+      if (json["status"] === true) {
+        alert(json["msg"]);
+        router.replace("/");
+      }
+    } catch (err) {
+      alert(err.toString());
     }
   };
+
   return (
     <main>
       <div className=" w-1/3 border mx-auto mt-36 p-5">
