@@ -12,6 +12,7 @@ export default function page() {
       if (json["status"] === true) {
         alert(json["msg"]);
         router.replace("/");
+        window.location.reload();
       }
     } catch (err) {
       alert(err.toString());
